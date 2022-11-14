@@ -1,4 +1,5 @@
 #include <stdlib.h>
+#include <stdio.h>
 
 typedef struct inner *inner_p;
 typedef struct outer *outer_p;
@@ -22,6 +23,8 @@ int main() {
     s->i = 0;
 
 
-    inner_p i[] = {};
+    ++q->i;
+    printf("%d\n", q->i);
+    printf("%d\n", r++->i);
     
 }

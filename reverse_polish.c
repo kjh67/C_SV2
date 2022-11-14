@@ -3,18 +3,13 @@
 #include <stdlib.h>
 
 typedef struct stack *stack_ptr;
-typedef struct item *item_ptr;
-
 
 struct stack {
     int data;
     stack_ptr ptr;
 };
 
-
-// implementing the stack functions; push, pop
 void push(stack_ptr *stack, int data) {
-    // stack is a pointer to a stack pointer; so we can change the pointer without needing to return anything
     stack_ptr new_stack = malloc(sizeof(struct stack));
     new_stack->data = data;
     new_stack->ptr = *stack;
@@ -53,7 +48,7 @@ int eval(char** commands, int comm_len) {
             printf("%d\n", a*b);
         }
         else {
-            // read in a value; assume single digit for now
+            // read in a value
             int v = 0;
             int l = strlen(command);
             int mult = 1;
